@@ -11,6 +11,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { BrandHeader } from '@/components/BrandHeader';
 import { HfEditError, editImageWithPrompt } from '@/lib/hfEdit';
 import { PRESET_PROMPTS } from '@/lib/presets';
 import {
@@ -47,6 +48,7 @@ export default function EditScreen() {
   if (!session) {
     return (
       <View style={styles.centered}>
+        <BrandHeader size="large" />
         <ActivityIndicator color={colors.accent} />
         <Text style={styles.muted}>Loading photo…</Text>
       </View>
@@ -214,9 +216,13 @@ export default function EditScreen() {
             )}
           </Pressable>
           {editing && (
-            <Text style={styles.muted}>
-              Editing on the free GPU — this can take 1–3 minutes including queue time.
-            </Text>
+            <View style={styles.processingCard}>
+              <BrandHeader size="small" />
+              <ActivityIndicator color={colors.accent} />
+              <Text style={styles.muted}>
+                Editing on the free GPU — this can take 1–3 minutes including queue time.
+              </Text>
+            </View>
           )}
           <Text style={styles.muted}>
             Each new edit applies to the version shown above, so you can keep
@@ -286,6 +292,15 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 16,
     padding: 20,
+    alignItems: 'center',
+    gap: 10,
+  },
+  processingCard: {
+    backgroundColor: colors.card,
+    borderColor: colors.border,
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 16,
     alignItems: 'center',
     gap: 10,
   },

@@ -1,12 +1,14 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
+import { BrandHeaderTitle } from '@/components/BrandHeader';
 import { colors } from '@/theme';
 
 export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
+        headerTitle: ({ children }) => <BrandHeaderTitle title={String(children)} />,
         headerStyle: { backgroundColor: colors.bg },
         headerTintColor: colors.text,
         tabBarStyle: {

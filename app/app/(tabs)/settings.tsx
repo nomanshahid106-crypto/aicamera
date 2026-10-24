@@ -11,6 +11,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { BrandHeader } from '@/components/BrandHeader';
 import { DEFAULT_SPACE_URL, HfEditError } from '@/lib/hfEdit';
 import {
   envSpaceUrl,
@@ -72,6 +73,7 @@ export default function SettingsScreen() {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+      <BrandHeader size="large" subtitle="Free AI photo editing — capture, prompt, done." />
       <View style={styles.statusCard}>
         <Ionicons
           name={effective ? 'checkmark-circle' : 'alert-circle'}

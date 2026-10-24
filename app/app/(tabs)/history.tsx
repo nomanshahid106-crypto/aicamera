@@ -10,6 +10,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { BrandHeader } from '@/components/BrandHeader';
 import { EditSession, currentVersion } from '@/lib/sessions';
 import { deleteSession, loadSessions } from '@/lib/storage';
 import { colors } from '@/theme';
@@ -49,7 +50,7 @@ export default function HistoryScreen() {
   if (sessions.length === 0) {
     return (
       <View style={styles.empty}>
-        <Ionicons name="images-outline" size={52} color={colors.textMuted} />
+        <BrandHeader size="large" />
         <Text style={styles.emptyTitle}>No photos yet</Text>
         <Text style={styles.emptyText}>
           Take a photo with the Camera tab, or import one, and your edit sessions

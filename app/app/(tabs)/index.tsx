@@ -11,6 +11,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { BrandHeader } from '@/components/BrandHeader';
 import { startSession } from '@/lib/storage';
 import { colors } from '@/theme';
 
@@ -77,7 +78,7 @@ export default function CameraScreen() {
   if (!permission.granted) {
     return (
       <View style={styles.centered}>
-        <Ionicons name="camera-outline" size={48} color={colors.textMuted} />
+        <BrandHeader size="large" subtitle="Capture a photo, then edit it by typing a prompt." />
         <Text style={styles.message}>
           PromptCam needs camera access to take a photo you can edit with a prompt.
         </Text>
