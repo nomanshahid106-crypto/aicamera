@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "PromptCam",
+    "slug": "promptcam",
+    "scheme": "promptcam",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B1220"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow PromptCam to take photos you can edit with AI."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow PromptCam to pick photos you want to edit with AI."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow PromptCam to save your edited photos to your gallery.",
+          "savePhotosPermission": "Allow PromptCam to save your edited photos to your gallery."
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.promptcam.app"
+    },
+    "android": {
+      "package": "com.promptcam.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0B1220"
+      },
+      "permissions": ["CAMERA"]
+    }
+  }
+}

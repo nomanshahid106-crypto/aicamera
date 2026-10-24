@@ -1,0 +1,7 @@
+app/node_modules/
+app/.expo/
+app/dist/
+app/.env
+app/.env*.local
+hf-space/__pycache__/
+*.log

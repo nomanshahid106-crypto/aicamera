@@ -1,0 +1,10 @@
+node_modules/
+.expo/
+dist/
+.env
+.env*.local
+*.log
+# Local placeholder icon binaries (regenerate real icons before release)
+assets/icon.png
+assets/adaptive-icon.png
+assets/splash.png
